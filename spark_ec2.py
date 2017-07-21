@@ -470,7 +470,8 @@ def get_spark_ami(opts):
     ami_path = "%s/%s/%s" % (ami_prefix, opts.region, instance_type)
     reader = codecs.getreader("ascii")
     try:
-        ami = reader(urlopen(ami_path)).read().strip()
+        ami = urlopen(ami_path).read().strip()
+        print 'test ami: '+ami
     except:
         print("Could not resolve AMI at: " + ami_path, file=stderr)
         sys.exit(1)
