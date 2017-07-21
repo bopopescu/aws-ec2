@@ -463,8 +463,8 @@ def get_spark_ami(opts):
         print("Don't recognize %s, assuming type is pvm" % opts.instance_type, file=stderr)
 
     # URL prefix from which to fetch AMI information
-    ami_prefix = "{r}/{b}/ami-list".format(
-        r=opts.spark_ec2_git_repo.replace("https://github.com", "https://raw.github.com", 1),
+    ami_prefix = "{r}/blob/{b}/ami-list".format(
+        r=opts.spark_ec2_git_repo.replace("https://github.com", "https://github.com", 1),
         b=opts.spark_ec2_git_branch)
 
     ami_path = "%s/%s/%s" % (ami_prefix, opts.region, instance_type)
