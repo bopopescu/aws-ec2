@@ -471,7 +471,6 @@ def get_spark_ami(opts):
     reader = codecs.getreader("ascii")
     try:
         ami = urlopen(ami_path).read().strip()
-        print 'test ami: '+ami
     except:
         print("Could not resolve AMI at: " + ami_path, file=stderr)
         sys.exit(1)
