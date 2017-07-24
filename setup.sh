@@ -52,6 +52,15 @@ fi
 echo "Setting executable permissions on scripts..."
 find . -regex "^.+.\(sh\|py\)" | xargs chmod a+x
 
+# master python and java envorment
+yum install -y java-1.8.0-openjdk  java-1.8.0-openjdk-devel
+ln -sf /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java /etc/alternatives/java
+# python2.7
+ln -sf /usr/bin/python2.7 /etc/alternatives/python
+
+yum install -y python27-numpy python27-scipy
+yum install -y  python-matplotlib python-tornado scipy libgfortran
+
 echo "RSYNC'ing /root/spark-ec2 to other cluster nodes..."
 rsync_start_time="$(date +'%s')"
 for node in $SLAVES $OTHER_MASTERS; do

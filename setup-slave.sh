@@ -132,3 +132,14 @@ popd > /dev/null
 # this is to set the ulimit for root and other users
 echo '* soft nofile 1000000' >> /etc/security/limits.conf
 echo '* hard nofile 1000000' >> /etc/security/limits.conf
+
+
+# slave envoriment settting 
+yum install -y java-1.8.0-openjdk  java-1.8.0-openjdk-devel
+ln -sf /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java /etc/alternatives/java
+# python2.7
+ln -sf /usr/bin/python2.7 /etc/alternatives/python
+
+yum install -y python27-numpy python27-scipy
+yum install -y  python-matplotlib python-tornado scipy libgfortran
+
