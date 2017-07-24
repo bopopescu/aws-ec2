@@ -17,10 +17,10 @@ sudo ln -sf /usr/bin/python2.7 /etc/alternatives/python
 sudo yum install -y python27-numpy python27-scipy
 
 # install pandas for python27
-# sudo wget http://springdale.math.ias.edu/data/puias/computational/6/x86_64//python27-pandas-0.14.1-1.sdl6.x86_64.rpm
+# sudo wget http://springdale.math.ias.edu/data/puias/computational/6/x86_64/python27-pandas-0.14.1-1.sdl6.x86_64.rpm
 
 # Dev tools
-sudo yum install -y java-1.8.0-openjdk* gcc gcc-c++ ant git
+sudo yum install -y java-1.8.0-openjdk-devel gcc gcc-c++ ant git
 # Perf tools
 sudo yum install -y dstat iotop strace sysstat htop perf
 sudo debuginfo-install -q -y glibc
